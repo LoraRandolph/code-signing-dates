@@ -1381,7 +1381,8 @@ The CA SHALL revoke a Certificate within 24 hours if one or more of the followin
 5. The CA is made aware of a demonstrated or proven method that exposes the Subscriber’s Private Key to compromise or if there is clear evidence that the specific method used to generate the Private Key was flawed; or
 6. The CA has reasonable assurance that a Certificate was used to sign Suspect Code.
  
-The CA SHOULD revoke a certificate within 24 hours and SHALL revoke a Certificate within 5 days if one or more of the following occurs:
+For items 1 through 6 above, the Certificate Authority (CA) SHOULD backdate the revocation to either the date of issuance or the date of compromise — whichever is applicable — within 24 hours of detection. If requested by Application Software Suppliers, and if immediate revocation would cause significant negative impact to the ecosystem, the CA MAY delay revocation for up to one week from the time of detection. In all cases, the CA SHALL ensure the revocation is backdated appropriately within one week of detection.
+
 
 7. The Certificate no longer complies with the requirements of Section 6.1.5 and Section 6.1.6; 
 8. The CA obtains evidence that the Certificate was misused. 
@@ -1392,7 +1393,8 @@ The CA SHOULD revoke a certificate within 24 hours and SHALL revoke a Certificat
 13. The CA's right to issue Certificates under these Requirements expires or is revoked or terminated, unless the CA has made arrangements to continue maintaining the CRL/OCSP Repository. 
 14. Revocation is required by the CA's Certificate Policy and/or Certification Practice Statement. 
  
-The CA MAY delay revocation based on a request from Application Software Suppliers where immediate revocation has a potentially large negative impact to the ecosystem.
+For items 7-14 above, the Certificate Authority (CA) SHOULD backdate the revocation to either the date of issuance or the date of compromise — whichever is applicable — within 5 days. If requested by Application Software Suppliers, and if immediate revocation would cause significant negative impact to the ecosystem, the CA MAY delay revocation for up to two weeks days from the time of detection. In all cases, the CA SHALL ensure the revocation is backdated appropriately within two weeks of detection.
+
 
  
 **Note:** Nothing herein prohibits a CA from revoking a Code Signing Certificate prior to these time frames.
@@ -3035,3 +3037,4 @@ jurisdictionCountryName ATTRIBUTE ::= {
 
 END
 ```
+
